@@ -4,11 +4,14 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex, nofollow">
   <title>Redirecting…</title>
-  <meta http-equiv="refresh" content="0; url=https://drive.google.com/file/d/1ewbPb1jpL8sjceB954VKbJOHZm9DNjU7/view">
-  <link rel="canonical" href="https://drive.google.com/file/d/1ewbPb1jpL8sjceB954VKbJOHZm9DNjU7/view">
-  <script>location.replace("https://drive.google.com/file/d/1ewbPb1jpL8sjceB954VKbJOHZm9DNjU7/view");</script>
+  <script>
+    fetch("target.txt?t=" + Date.now(), { cache: "no-store" })
+      .then(r => r.text())
+      .then(u => location.replace(u.trim()))
+      .catch(() => document.body.textContent = "Redirect failed.");
+  </script>
 </head>
 <body>
-  <p>Redirecting to <a href="https://drive.google.com/file/d/1ewbPb1jpL8sjceB954VKbJOHZm9DNjU7/view">the troop's calendar.</a>…</p>
+  <p>Redirecting to the troop's calendar...</a>…</p>
 </body>
 </html>
